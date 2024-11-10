@@ -9,6 +9,7 @@ This is a personal project for learning Go, exposing system monitoring data via 
 ## Endpoints
 
 - `GET /processes` - List of running processes.
+- `DELETE /processes/:pid` - Kill a process by its PID.
 - `GET /disk-usage` - Disk usage statistics.
 - `GET /disk-io` - Disk input/output statistics.
 - `GET /partitions` - System partition information.

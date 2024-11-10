@@ -4,6 +4,7 @@ import (
     "os/exec"
     "strconv"
     "strings"
+    "errors"
     "simple-sysmonitor-api/models"
 )
 
@@ -48,4 +49,13 @@ func GetProcesses() ([]models.Process, error) {
     }
 
     return processes, nil
+}
+
+func KillProcess(pid int) error {
+    cmd := exec.Command("kill", "-9", strconv.Itoa(pid))
+    err := cmd.Run()
+    if err != nil {
+        return errors.New("failed to kill process: " + err.Error())
+    }
+    return nil
 }

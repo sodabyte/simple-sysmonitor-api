@@ -12,6 +12,7 @@ func main() {
     r.Use(cors.Default())
 
     r.GET("/processes", handlers.GetProcessesHandler)
+    r.DELETE("/processes/:pid", handlers.KillProcessHandler)
     r.GET("/disk-usage", handlers.GetDiskUsageHandler)
     r.GET("/disk-io", handlers.GetDiskIOHandler)
     r.GET("/partitions", handlers.GetPartitionsHandler)
